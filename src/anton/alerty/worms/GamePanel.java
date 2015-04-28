@@ -13,6 +13,7 @@ public class GamePanel extends JPanel implements Runnable {
 	
 	public volatile boolean running = false; //stops the animation
 	public volatile boolean gameOver = false; //for game termination
+	public volatile boolean isPaused = false; //for game pause
 	
 	private Graphics dbg;
 	private Image dbImage = null;
@@ -66,7 +67,7 @@ public class GamePanel extends JPanel implements Runnable {
 	}
 	
 	public void gameUpdate() {
-		if (!gameOver) {
+		if (!isPaused && !gameOver) {
 			
 		}
 	}
@@ -135,7 +136,7 @@ public class GamePanel extends JPanel implements Runnable {
 	}
 	
 	private void testPress(int x, int y) {
-		if (!gameOver) {
+		if (!isPaused && !gameOver) {
 			//do smth with x, y;
 		}
 	}
